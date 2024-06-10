@@ -51,15 +51,15 @@ async def HELP(ctx):
 async def test(ctx, arg):
     await ctx.send(arg)
 
-@bot.tree.command(name='HELP', description='ฉันคือบอท เผื่อไม่รู้')
-async def Helppcommand(interaction):
+@bot.tree.command(name='help', description='ฉันคือบอท เผื่อไม่รู้')
+async def helppcommand(interaction):
     await interaction.response.send_message("""ฉันคือบอท เผื่อไม่รู้ \n
                                             พิมพ์ 'p!' แล้วตามด้วยคำสั่ง \n 
                                             help = ก็ดูข้อมูลนี้แหละเออ \n 
                                             play =  ตามด้วยชื่อเพลงหรือลิงค์ เพื่อเปิดเพลง \n
                                             """)
 
-@bot.tree.command(name='Name')
+@bot.tree.command(name='help')
 @app_commands.describe(name = "What's your name?")
 async def namecommand(interaction, name : str):
     await interaction.response.send_message(f"หวัดดี {name}")
