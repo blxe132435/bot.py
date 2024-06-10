@@ -35,7 +35,7 @@ async def on_message(message):
     if 'หวัดดี' in mes:
         await message.channel.send("หวัดไม่ดีนะ")
 
-    elif 'บอท' in mes :
+    if 'บอท' in mes :
         await message.channel.send("ผมบอทเองครับ")
 
     await bot.process_commands(message)
