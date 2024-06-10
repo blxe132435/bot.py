@@ -38,6 +38,9 @@ async def on_message(message):
     if 'บอท' in mes :
         await message.channel.send("ผมบอทเองครับ")
 
+    elif '0821689151' == mes:
+        await message.channel.send("abd")
+
     await bot.process_commands(message)
 
 @bot.command()
