@@ -52,7 +52,7 @@ async def test(ctx, arg):
     await ctx.send(arg)
 
 @bot.tree.command(name='Help', description='ฉันคือบอท เผื่อไม่รู้')
-async def hellocommand(interaction):
+async def Helpcommand(interaction):
     await interaction.response.send_message("""ฉันคือบอท เผื่อไม่รู้ \n
                                             พิมพ์ 'p!' แล้วตามด้วยคำสั่ง \n 
                                             help = ก็ดูข้อมูลนี้แหละเออ \n 
