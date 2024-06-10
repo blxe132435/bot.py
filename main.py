@@ -42,16 +42,14 @@ async def on_message(message):
 
 @bot.command()
 async def HELP(ctx):
-    await ctx.send("""พิมพ์ 'p!' แล้วตามด้วยคำสั่ง \n
-                    help = ก็ดูข้อมูลนี้แหละเออ \n
-                    play =  ตามด้วยชื่อเพลงหรือลิงค์ เพื่อเปิดเพลง \n
+    await ctx.send("""พิมพ์ 'p!' แล้วตามด้วยคำสั่ง \n help = ก็ดูข้อมูลนี้แหละเออ \n play =  ตามด้วยชื่อเพลงหรือลิงค์ เพื่อเปิดเพลง
                     """)
     
 @bot.command()
 async def test(ctx, arg):
     await ctx.send(arg)
 
-@bot.tree.command(name="Do_not_use_this", description='ฉันคือบอท เผื่อไม่รู้')
+@bot.tree.command(name="do_not_use_this", description='ฉันคือบอท เผื่อไม่รู้')
 async def helppcommand(interaction):
     await interaction.response.send_message("""ฉันคือบอท เผื่อไม่รู้ \n พิมพ์ 'p!' แล้วตามด้วยคำสั่ง \n help = ก็ดูข้อมูลนี้แหละเออ \n play =  ตามด้วยชื่อเพลงหรือลิงค์ เพื่อเปิดเพลง \n
                                             """)
