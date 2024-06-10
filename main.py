@@ -41,7 +41,7 @@ async def on_message(message):
     await bot.process_commands(message)
 
 @bot.command()
-async def คู่มือ(ctx):
+async def HELP(ctx):
     await ctx.send("""พิมพ์ 'p!' แล้วตามด้วยคำสั่ง \n
                     help = ก็ดูข้อมูลนี้แหละเออ \n
                     play =  ตามด้วยชื่อเพลงหรือลิงค์ เพื่อเปิดเพลง \n
