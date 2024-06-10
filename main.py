@@ -72,8 +72,8 @@ async def helppcommand(interaction):
                                timestamp= discord.utils.utcnow())
 
 
-    emmbed.add_field(name='/hello1', value='Hello Command', inline=True)    
-    emmbed.add_field(name='/hello2', value='Hello Command', inline=True)
+    emmbed.add_field(name='/hello1', value='Hello Command\n', inline=True)    
+    emmbed.add_field(name='/hello2', value='Hello Command\n', inline=True)
     emmbed.add_field(name='/hello3', value='Hello Command', inline=False)
 
     emmbed.set_author(name='กดเพื่อวาป', url='https://www.instagram.com/gg_xpex/', icon_url='https://media1.tenor.com/m/5oQ9_1CpCuoAAAAd/spooky-month-spooky-season.gif')
