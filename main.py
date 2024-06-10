@@ -10,7 +10,7 @@ bot = commands.Bot(command_prefix='p!', intents=discord.Intents.all())
 async def on_ready():
     print("Bot ready")
     synced = await bot.tree.sync()
-    print(f"{len{synced}} command(s)")
+    print(f"(len{synced}) command(s)")
 
 @bot.event
 async def on_member_join(member):
