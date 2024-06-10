@@ -35,10 +35,10 @@ async def on_message(message):
     if 'หวัดดี' in mes:
         await message.channel.send("หวัดไม่ดีนะ")
 
-    if 'บอท' in mes :
+    if '0821689151' in mes :
         await message.channel.send("ผมบอทเองครับ")
 
-    elif '0821689151' == mes:
+    elif 'บอท' == mes:
         await message.channel.send("abd")
 
     await bot.process_commands(message)
@@ -59,8 +59,9 @@ async def helppcommand(interaction):
 
 @bot.tree.command(name='name')
 @app_commands.describe(name = "What's your name?")
-async def namecommand(interaction, name : str):
-    await interaction.response.send_message(f"หวัดดี {name}")
+async def namecommand(interaction):
+# async def namecommand(interaction, name : str):
+    await interaction.response.send_message(f"หวัดดี {user_name}")
 
 #embed
 @bot.tree.command(name='help', description='คู่มือบอท')
@@ -75,7 +76,7 @@ async def helppcommand(interaction):
     emmbed.add_field(name='/hello2', value='Hello Command', inline=True)
     emmbed.add_field(name='/hello3', value='Hello Command', inline=False)
 
-    emmbed.set_author(name='Author', url='https://youtu.be/Eg5_Nq5sIiE?si=t2YvZO45wrlKdfEs', icon_url='https://www.youtube.com/@oneonejadev')
+    emmbed.set_author(name='กดเพื่อวาป', url='https://www.instagram.com/gg_xpex/', icon_url='https://media1.tenor.com/m/5oQ9_1CpCuoAAAAd/spooky-month-spooky-season.gif')
 
     emmbed.set_thumbnail(url='https://media1.tenor.com/m/HwGJ_4uXGU4AAAAd/stare-cat-stare.gif')
     emmbed.set_image(url='https://media1.tenor.com/m/dd2Q9t5km5YAAAAd/computer-pc.gif')
