@@ -59,7 +59,7 @@ async def helppcommand(interaction):
                                             play =  ตามด้วยชื่อเพลงหรือลิงค์ เพื่อเปิดเพลง \n
                                             """)
 
-@bot.tree.command(name='help')
+@bot.tree.command(name='name')
 @app_commands.describe(name = "What's your name?")
 async def namecommand(interaction, name : str):
     await interaction.response.send_message(f"หวัดดี {name}")
