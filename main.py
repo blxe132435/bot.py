@@ -1,5 +1,6 @@
 import os
 import discord
+
 from discord import app_commands
 from discord.ext import commands
 from myserver import server_on
@@ -53,10 +54,10 @@ async def play(ctx, url):
         await ctx.send("You must be in a voice channel to use this command.")
         return
 
-    Join the voice channel
+    # Join the voice channel
     await voice_channel.connect()
 
-    Play the song
+    # Play the song
     player = await voicechannel.createytdl_player(url)
     player.start()
 
