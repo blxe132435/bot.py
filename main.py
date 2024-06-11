@@ -44,6 +44,24 @@ async def on_message(message):
     await bot.process_commands(message)
 
 @bot.command()
+async def play(ctx, url):
+    Get the voice channel that the user is in
+    voice_channel = ctx.author.voice.channel
+
+    If the user is not in a voice channel, return an error message
+    if not voice_channel:
+        await ctx.send("You must be in a voice channel to use this command.")
+        return
+
+    Join the voice channel
+    await voice_channel.connect()
+
+    Play the song
+    player = await voicechannel.createytdl_player(url)
+    player.start()
+
+
+@bot.command()
 async def HELP(ctx):
     await ctx.send("""พิมพ์ 'p!' แล้วตามด้วยคำสั่ง \n help = ก็ดูข้อมูลนี้แหละเออ \n play =  ตามด้วยชื่อเพลงหรือลิงค์ เพื่อเปิดเพลง
                     """)
