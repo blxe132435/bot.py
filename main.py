@@ -1,6 +1,7 @@
 import os
 import discord
 import nacl.secret
+import webbrowser
 from discord import app_commands
 from discord.ext import commands
 from myserver import server_on
@@ -29,6 +30,12 @@ async def on_member_remove(member):
     channel = bot.get_channel(1249552387476295780)
     text = f"{member.name} has left the server!"
     await channel.send(text)
+
+@client.event
+async def on_message(message):
+    if message.content.startswith('!join'):
+        channel = message.author.voice.channel
+        await channel.connect()
 
 @bot.event
 async def on_message(message):
