@@ -131,7 +131,7 @@ async def HELP(ctx):
 async def test(ctx, arg):
     await ctx.send(arg)
 
-@bot.tree.command(name="do_not_use_this", description='ฉันคือบอท เผื่อไม่รู้')
+@bot.tree.command(name="do_not_use_thisssss", description='ฉันคือบอท เผื่อไม่รู้')
 async def helppcommand(interaction):
     await interaction.response.send_message("""ฉันคือบอท เผื่อไม่รู้ \n พิมพ์ 'p!' แล้วตามด้วยคำสั่ง \n help = ก็ดูข้อมูลนี้แหละเออ \n play =  ตามด้วยชื่อเพลงหรือลิงค์ เพื่อเปิดเพลง \n
                                             """)
@@ -143,7 +143,7 @@ async def namecommand(interaction, name : str):
     await interaction.response.send_message(f"หวัดดี {user_name}")
 
 #embed
-@bot.tree.command(name='help', description='คู่มือบอท')
+@bot.tree.command(name='helpp', description='คู่มือบอท')
 async def helppcommand(interaction):
     emmbed = discord.Embed(title='ช่วยด้วย! - คู่มือบอท', 
                            description='คู่มือบอท',
