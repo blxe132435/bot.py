@@ -24,12 +24,14 @@ async def on_message(message):
 
 @bot.event
 async def on_message(message):
-    if message.content.startswith('join'):
+    voice_channel = message.author.voice.channel
+    if message.content == "join":
         channel = message.author.voice.channel
         await channel.connect()
 
 @bot.command()
-async def join(ctx):
+async def join(message):
+        voice_channel = ctx.author.voice.channel
         channel = message.author.voice.channel
         await channel.connect()
     
