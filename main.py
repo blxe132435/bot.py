@@ -9,13 +9,16 @@ from myserver import server_on
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 # ------------------------
+# ------------------------
+# ------------------------
+# ------------------------
 @bot.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f'We have logged in as {bot.user}')
 
 @bot.event
 async def on_message(message):
-    if message.content.startswith('!play'):
+    if message.content.startswith('pllay'):
         song_name = message.content.split(' ', 1)[1]
         search_query = song_name.replace(' ', '+')
         url = f"https://www.youtube.com/results?search_query={search_query}"
@@ -23,18 +26,43 @@ async def on_message(message):
 
 
 @bot.event
-async def on_message(message):
-    voice_channel = message.author.voice.channel
-    if message.content == "join":
-        channel = message.author.voice.channel
+async def on_message(ctx):
+    voice_channel = ctx.author.voice.channel
+    if ctx.content == "join":
+        channel = ctx.author.voice.channel
         await channel.connect()
 
 @bot.command()
-async def join(message):
+async def joinn(ctx):
         voice_channel = ctx.author.voice.channel
-        channel = message.author.voice.channel
+        channel = ctx.author.voice.channel
         await channel.connect()
+
+
+
+
+@bot.command()
+async def join(ctx):
+    if ctx.author.voice:
+        voice_channel = ctx.author.voice.channel
+        voice_client = await voice_channel.connect()
+        await ctx.send('เข้าห้องเสียงเรียบร้อยแล้ว')
+    else:
+        await ctx.send('กรุณาเข้าร่วมห้องเสียงก่อน')
+
+@bot.command()
+async def play3(ctx, *, song_name):
+    search_query = song_name.replace(' ', '+')
+    url = f"https://www.youtube.com/results?search_query={search_query}"
     
+    if ctx.author.voice:
+        voice_channel = ctx.author.voice.channel
+        voice_client = await voice_channel.connect()
+        voice_client.play(discord.FFmpegPCMAudio(url))
+    else:
+        await ctx.send('กรุณาเข้าร่วมห้องเสียงก่อนเล่นเพลง')
+# ------------------------
+# ------------------------
 # ------------------------
 
 
