@@ -8,6 +8,33 @@ from myserver import server_on
 
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
+# ------------------------
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {client.user}')
+
+@bot.event
+async def on_message(message):
+    if message.content.startswith('!play'):
+        song_name = message.content.split(' ', 1)[1]
+        search_query = song_name.replace(' ', '+')
+        url = f"https://www.youtube.com/results?search_query={search_query}"
+        webbrowser.open(url)
+
+
+@bot.event
+async def on_message(message):
+    if message.content.startswith('join'):
+        channel = message.author.voice.channel
+        await channel.connect()
+
+@bot.command()
+async def join(ctx):
+        channel = message.author.voice.channel
+        await channel.connect()
+    
+# ------------------------
+
 
 @bot.event
 async def on_ready():
@@ -32,11 +59,6 @@ async def on_member_remove(member):
     text = f"{member.name} has left the server!"
     await channel.send(text)
 
-@bot.event
-async def on_message(message):
-    if message.content.startswith('!join'):
-        channel = message.author.voice.channel
-        await channel.connect()
 
 @bot.event
 async def on_message(message):
