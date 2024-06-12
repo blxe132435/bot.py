@@ -107,13 +107,13 @@ async def on_message(message):
 @bot.command()
 async def play(ctx, url):
     # Get the voice channel that the user is in
-    voice_channel = ctx.author.voice.channel
 
     # If the user is not in a voice channel, return an error message
     if not voice_channel:
         await ctx.send("You must be in a voice channel to use this command.")
         return
 
+    voice_channel = ctx.author.voice.channel
     # Join the voice channel
     await voice_channel.connect()
 
