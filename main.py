@@ -137,9 +137,9 @@ async def helppcommand(interaction):
                                             """)
 
 @bot.tree.command(name='name')
-# @app_commands.describe(name = "What's your name?")
-async def namecommand(interaction):
-# async def namecommand(interaction, name : str):
+@app_commands.describe(name = "What's your name?")
+# async def namecommand(interaction):
+async def namecommand(interaction, name : str):
     await interaction.response.send_message(f"หวัดดี {user_name}")
 
 #embed
