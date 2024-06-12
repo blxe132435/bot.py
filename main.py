@@ -7,7 +7,7 @@ from discord.ext import commands
 from myserver import server_on
 
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
-client = discord.Client()
+
 
 @bot.event
 async def on_ready():
@@ -32,7 +32,7 @@ async def on_member_remove(member):
     text = f"{member.name} has left the server!"
     await channel.send(text)
 
-@client.event
+@bot.event
 async def on_message(message):
     if message.content.startswith('!join'):
         channel = message.author.voice.channel
